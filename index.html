@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Кредитный калькулятор ТКПБ" />
+    <meta name="keywords" content="кредит, калькулятор" />
+    <meta name="author" content="MDV" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--нужен чтобы был адаптив-->
+    <link rel="icon" type="image/x-icon" href="images/tkpb.png" />
+    <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+    <section>
+        <h1>Калькулятор расчета пдн</h1>
+        <div class="block-form">
+            <div class="wrap-h2-title">
+                <h2 calss="h2-title">Параметры кредита,</h2>
+                <!--тег form нужен ли?-->
+                <select id="var_credit" name="var_credit">
+                    <option value="requested" selected>запрашиваемого</option>
+                    <option value="restructured">реструктурируемого</option>
+                </select>
+                <h2 calss="h2-title">в АО Банк ТКПБ</h2>
+            </div>
+            <form>
+                <input type="text" id="fname" name="fname" value="John">
+                <input type="text" id="fname" name="fname" value="John">
+            </form>
+            <!--Добавить сюда формочки-->
+        </div>
+        <div class="block-form">
+            <h2 calss="h2-title">Кредиты по данным отчета БКИ (кроме предоставленных АО Банк "ТКПБ"</h2>
+            <div>
+                <div>
+                    <p>Кредит 1</p>
+                    <button onclick="удалить"><img src="icons/state=Default-1.svg"></button>
+                </div>
+                <!--Добавить сюда формочки-->
+            </div>
+            <button onclick="todo">Добавить кредит</button>
+        </div>
+        <div class="block-form">
+            <h2 calss="h2-title">Кредиты и займы по договорам с другими кредиторами
+                (кроме отчета БКИ, кроме предоставленных АО Банк "ТКПБ") </h2>
+            <div>
+                <div>
+                    <p>Кредит 1</p>
+                    <button onclick="удалить"></button>
+                </div>
+                <!--Добавить сюда формочки-->
+            </div>
+            <button onclick="todo">Добавить кредит</button>
+        </div>
+        <div class="block-form">
+            <h2 calss="h2-title">Кредиты и займы, предоставленные АО Банк "ТКПБ"</h2>
+            <div>
+                <div>
+                    <p>Кредит 1</p>
+                    <button onclick="удалить"></button>
+                </div>
+                <!--Добавить сюда формочки-->
+            </div>
+            <button onclick="todo">Добавить кредит</button>
+        </div>
+        <div class="block-form">
+            <h2 calss="h2-title">Просроченные задолженности по кредитам</h2>
+            <div>
+                <div>
+                    <p>Задолженность 1</p>
+                    <button onclick="удалить"></button>
+                </div>
+                <!--Добавить сюда формочки-->
+            </div>
+            <button onclick="todo">Добавить задолженность</button>
+        </div>
+        <div class="block-form">
+            <h2 calss="h2-title">Информация по кредитным картам</h2>
+            <div>
+                <div>
+                    <p>Кредитная карта 1</p>
+                    <button onclick="удалить"></button>
+                </div>
+                <!--Добавить сюда формочки-->
+            </div>
+            <button onclick="todo">Добавить карту</button>
+        </div>
+        <div class="block-form">
+            <h2 calss="h2-title">Чистый ежемесячный доход</h2>
+            <!--Добавить сюда форму-->
+        </div>
+        <button onclick="рассчитать">рассчитать</button>
+        <div class="block-form">
+            <table>
+                <caption calss="h2-title">ГРАФИК ПЛАТЕЖЕЙ</caption>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Общая сумма платежа</th>
+                        <th>платеж по погашению основного долга</th>
+                        <th>платеж по погашению процентов</th>
+                        <th>Остаток задолженности после платежа</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>123</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>итог</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div>
+                <p>Среднемесячный платеж по запрашиваемому кредиту = </p>
+                <!--Добавить сюда форму-->
+            </div>
+            <div>
+                <p>Среднемесячный платеж по данным отчета
+                    БКИ и иным заёмным средствам =</p>
+                <!--Добавить сюда форму-->
+            </div>
+            <div>
+                <p>ПДН</p>
+                <!--Добавить сюда форму-->
+            </div>
+        </div>
+        <button onclick="todo">Сохранить в PDF</button>
+    </section>
+</body>
+
+</html>
