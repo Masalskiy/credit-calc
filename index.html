@@ -8,92 +8,111 @@
     <meta name="keywords" content="кредит, калькулятор" />
     <meta name="author" content="MDV" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--нужен чтобы был адаптив-->
     <link rel="icon" type="image/x-icon" href="images/tkpb.png" />
     <link rel="stylesheet" href="css/style.css" />
-
 </head>
 
 <body>
     <section>
         <h1>Калькулятор расчета пдн</h1>
-        <div class="block-form">
-            <div class="wrap-h2-title">
-                <h2 calss="h2-title">Параметры кредита,</h2>
-                <!--тег form нужен ли?-->
-                <select id="var_credit" name="var_credit">
-                    <option value="requested" selected>запрашиваемого</option>
-                    <option value="restructured">реструктурируемого</option>
+        <form action="TODO" method="get">
+            <div class="block-form">
+                <div class="wrap-h2-title">
+                    <h2 calss="h2-title">Параметры кредита,</h2>
+                    <select id="var_credit" name="var_credit">
+                        <option value="requested" selected>запрашиваемого</option>
+                        <option value="restructured">реструктурируемого</option>
+                    </select>
+                    <h2 calss="h2-title">в АО Банк ТКПБ</h2>
+                </div>
+
+                <div class="did-floating-label-content">
+                    <input class="did-floating-input" type="text" placeholder="ФИО заемщика">
+                    <label class="did-floating-label">Sale Price</label>
+                  </div>
+
+
+                <div class="did-floating-label-content">
+                    <input class="floating-input" type="text" name="fio" placeholder=" " autocomplete="off" required >
+                    <label class="floating-label">ФИО заёмщика</label>
+                </div>
+
+
+                <input class="input-form" type="date" name="date-calculation" id="date-calculation" placeholder="Дата расчёта" min="2020-01-01" max="2040-01-01"  required>
+                <input class="input-form" type="number" name="sum-credit" placeholder="Сумма кредита, руб" required>
+                <input class="input-form" type="number" name="credit-term" placeholder="Срок кредита, мес" required>
+                <input class="input-form" type="number" name="interest-rate" placeholder="Процентная ставка, % в год" required>
+                <input class="input-form" type="number" name="payment-type" placeholder="Вид платежа" required>
+                <select class="input-form" id="" name="" placeholder="Вид платежа">
+                    <option value="annuity" selected>Аннуитентный</option>
+                    <option value="other">Иной</option>
+                    <option value="fluent">Свободно диф.</option>
                 </select>
-                <h2 calss="h2-title">в АО Банк ТКПБ</h2>
+                <input class="input-form" type="date" name="loan-term" placeholder="Начало выплат" required>
+
             </div>
-            <form>
-                <input type="text" id="fname" name="fname" value="John">
-                <input type="text" id="fname" name="fname" value="John">
-            </form>
-            <!--Добавить сюда формочки-->
-        </div>
-        <div class="block-form">
-            <h2 calss="h2-title">Кредиты по данным отчета БКИ (кроме предоставленных АО Банк "ТКПБ"</h2>
-            <div>
+            <div class="block-form">
+                <h2 calss="h2-title">Кредиты по данным отчета БКИ<br/>(кроме предоставленных АО Банк "ТКПБ"</h2>
                 <div>
-                    <p>Кредит 1</p>
-                    <button onclick="удалить"><img src="icons/state=Default-1.svg"></button>
+                    <div>
+                        <p>Кредит 1</p>
+                        <button onclick="удалить"><img src="icons/state=Default-1.svg"></button>
+                    </div>
+                    <!--Добавить сюда формочки-->
                 </div>
-                <!--Добавить сюда формочки-->
+                <button onclick="todo">Добавить кредит</button>
             </div>
-            <button onclick="todo">Добавить кредит</button>
-        </div>
-        <div class="block-form">
-            <h2 calss="h2-title">Кредиты и займы по договорам с другими кредиторами
-                (кроме отчета БКИ, кроме предоставленных АО Банк "ТКПБ") </h2>
-            <div>
+            <div class="block-form">
+                <h2 calss="h2-title">Кредиты и займы по договорам с другими кредиторами<br/>
+                    (кроме отчета БКИ, кроме предоставленных АО Банк "ТКПБ") </h2>
                 <div>
-                    <p>Кредит 1</p>
-                    <button onclick="удалить"></button>
+                    <div>
+                        <p>Кредит 1</p>
+                        <button onclick="удалить"></button>
+                    </div>
+                    <!--Добавить сюда формочки-->
                 </div>
-                <!--Добавить сюда формочки-->
+                <button onclick="todo">Добавить кредит</button>
             </div>
-            <button onclick="todo">Добавить кредит</button>
-        </div>
-        <div class="block-form">
-            <h2 calss="h2-title">Кредиты и займы, предоставленные АО Банк "ТКПБ"</h2>
-            <div>
+            <div class="block-form">
+                <h2 calss="h2-title">Кредиты и займы, предоставленные АО Банк "ТКПБ"</h2>
                 <div>
-                    <p>Кредит 1</p>
-                    <button onclick="удалить"></button>
+                    <div>
+                        <p>Кредит 1</p>
+                        <button onclick="удалить"></button>
+                    </div>
+                    <!--Добавить сюда формочки-->
                 </div>
-                <!--Добавить сюда формочки-->
+                <button onclick="todo">Добавить кредит</button>
             </div>
-            <button onclick="todo">Добавить кредит</button>
-        </div>
-        <div class="block-form">
-            <h2 calss="h2-title">Просроченные задолженности по кредитам</h2>
-            <div>
+            <div class="block-form">
+                <h2 calss="h2-title">Просроченные задолженности по кредитам</h2>
                 <div>
-                    <p>Задолженность 1</p>
-                    <button onclick="удалить"></button>
+                    <div>
+                        <p>Задолженность 1</p>
+                        <button onclick="удалить"></button>
+                    </div>
+                    <!--Добавить сюда формочки-->
                 </div>
-                <!--Добавить сюда формочки-->
+                <button onclick="todo">Добавить задолженность</button>
             </div>
-            <button onclick="todo">Добавить задолженность</button>
-        </div>
-        <div class="block-form">
-            <h2 calss="h2-title">Информация по кредитным картам</h2>
-            <div>
+            <div class="block-form">
+                <h2 calss="h2-title">Информация по кредитным картам</h2>
                 <div>
-                    <p>Кредитная карта 1</p>
-                    <button onclick="удалить"></button>
+                    <div>
+                        <p>Кредитная карта 1</p>
+                        <button onclick="удалить"></button>
+                    </div>
+                    <!--Добавить сюда формочки-->
                 </div>
-                <!--Добавить сюда формочки-->
+                <button onclick="todo">Добавить карту</button>
             </div>
-            <button onclick="todo">Добавить карту</button>
-        </div>
-        <div class="block-form">
-            <h2 calss="h2-title">Чистый ежемесячный доход</h2>
-            <!--Добавить сюда форму-->
-        </div>
-        <button onclick="рассчитать">рассчитать</button>
+            <div class="block-form">
+                <h2 calss="h2-title">Чистый ежемесячный доход</h2>
+                <!--Добавить сюда форму-->
+            </div>
+            <button onclick="рассчитать">рассчитать</button>
+        </form>
         <div class="block-form">
             <table>
                 <caption calss="h2-title">ГРАФИК ПЛАТЕЖЕЙ</caption>
@@ -133,6 +152,7 @@
         </div>
         <button onclick="todo">Сохранить в PDF</button>
     </section>
+    <!-- <script language="JavaScript" src="js/current-date.js"></script> -->
 </body>
 
 </html>

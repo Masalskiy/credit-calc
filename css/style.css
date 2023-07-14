@@ -1,3 +1,4 @@
+@import url(color.css);
 body {
   background-color: #F6F7F9;
 }
@@ -92,6 +93,12 @@ body {
 }
 
 .block-form {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
   border-radius: 1rem;
   background: #FFF;
 
@@ -107,3 +114,114 @@ body {
   gap: 0.5rem;
   align-self: stretch;
 }
+
+.input-form {
+  display: flex;
+  width: 36.0625rem;
+  /*height: 2.875rem;*/
+  height: 46px;
+  padding: 0.5rem 0.75rem;
+  align-items: center;
+
+
+  border-radius: 0.5rem;
+  border-color: none;
+  background: var(--background-unactive-form, #ECF1F7);
+
+}
+
+
+
+/*плавающая форма*/
+
+.did-floating-label-content {
+  position: relative;
+  /*нормальный поток документа. Можно задать сдвиг*/
+  margin-bottom: 20px;
+  /*font-size: 30px;*/
+}
+
+.did-floating-label {
+  color: var(--active-text, #100F0F);
+  /*кастомное свойство. Второй аргумент - резервное значение*/
+
+  /* заголовок в форме */
+  font-family: Roboto;
+  font-size: 0.875rem;;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.875rem;
+
+  position: absolute;
+  /*объект удаляется из нормального потока документа
+  и относительно родителя задаются смещения
+  left
+  top
+  */
+  pointer-events: none;
+  /*должно ли реагировать на события указателя
+  при наведении чтобы курсор не менял своего состояния*/
+  left: 0.5rem;
+  top: 0.7rem;
+  padding: 0.25rem 0.25rem;
+  /* По вертикали | По горизонтали */
+  background: var(--form-bg-color, #ECF1F7);
+  /*верхние 2 свойства нужны чтобы типо
+   казалось что рамка прерывается*/
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  /*просто свойства для совместимости браузеров*/
+}
+
+.did-floating-input {
+
+  display: block;
+  width: 36.0625rem;
+  height: 2.875rem;
+  padding: 0.5rem 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+
+  background: #fff;
+  color: #323840;
+  border: 1px solid #3D85D8;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.did-floating-input:focus { 
+  outline: none;
+  border: 1px solid #9D9D9D;
+}
+
+.did-floating-input:focus~.did-floating-label {
+  /*когда нажал чтобы писать*/
+  top: -0.7rem;
+ /* font-size: 0.875rem;*/
+}
+
+.did-floating-input:not(:placeholder-shown)~.did-floating-label {
+  /*когда пишешь и в форме появляется текст*/
+  top: -1rem;
+/*  font-size: 0.875rem;*/
+}
+
+
+.did-floating-input::placeholder {
+color: transparent;
+/*потом нужно чтобы плейсхолдер появился*/
+/* unAktiveText */
+font-family: Roboto;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+/*конец плавающая форма*/
+
+/*настроить специфичность для разных браузеров*/
+
+
