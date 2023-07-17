@@ -8,6 +8,10 @@
     <meta name="keywords" content="кредит, калькулятор" />
     <meta name="author" content="MDV" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, maximum-scale=3, minimum-scale=0.9">
+    <!--НА СКОЛЬКО ПОЛЬЗОВАТЕЛИ МОГУТ УВЕЛИЧИВАТЬ/УМЕНЬШАТЬ ШИРИНУ СТРАНИЦЫ-->
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <!--ОТКЛЮЧИТЬ МАСШТАБИРОВАНИЕ-->
     <link rel="icon" type="image/x-icon" href="images/tkpb.png" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -27,15 +31,9 @@
                 </div>
 
                 <div class="did-floating-label-content">
-                    <input class="did-floating-input" type="text" placeholder="ФИО заемщика">
-                    <label class="did-floating-label">Sale Price</label>
+                    <input class="did-floating-input" type="text" placeholder="Иванов Иван Иванович">
+                    <label class="did-floating-label">ФИО заемщика</label>
                   </div>
-
-
-                <div class="did-floating-label-content">
-                    <input class="floating-input" type="text" name="fio" placeholder=" " autocomplete="off" required >
-                    <label class="floating-label">ФИО заёмщика</label>
-                </div>
 
 
                 <input class="input-form" type="date" name="date-calculation" id="date-calculation" placeholder="Дата расчёта" min="2020-01-01" max="2040-01-01"  required>

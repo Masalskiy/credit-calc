@@ -1,10 +1,8 @@
 @import url(color.css);
-body {
-  background-color: #F6F7F9;
-}
+
 
 h1 {
-  color: #100F0F;
+  color: var(--active-text, #100F0F);
   font-family: Roboto;
   font-size: 1.75rem;
   font-style: normal;
@@ -14,6 +12,7 @@ h1 {
 }
 
 section {
+  background-color: var(--group-form-bg-color, #F6F7F9);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,23 +27,12 @@ select {
   gap: 0.25rem;
 }
 
-p {
-  color: red;
-}
-
-path {
-  fill: rgb(255, 0, 0);
-}
-
-/*​
-  .sheet font-family: courier;
-  .forma   border: 2px solid powderblue; padding: 30px;
-  */
-
+/*определение стиля таблицы*/
 table {
   border-collapse: collapse;
   width: 100%;
 }
+
 
 th,
 td {
@@ -65,22 +53,11 @@ tr {
   border-bottom: 1px solid #ff11b0;
 }
 
-
-
-
-
-
-table {
-  width: 100%
-}
-
 caption {
   text-align: left;
 }
+/*конец определения стиля таблицы*/
 
-body {
-  background: #F6F7F9;
-}
 
 .h2-title {
   color: var(--active-text, #100F0F);
@@ -115,22 +92,12 @@ body {
   align-self: stretch;
 }
 
-.input-form {
+form{
   display: flex;
-  width: 36.0625rem;
-  /*height: 2.875rem;*/
-  height: 46px;
-  padding: 0.5rem 0.75rem;
+  flex-direction: column;
   align-items: center;
-
-
-  border-radius: 0.5rem;
-  border-color: none;
-  background: var(--background-unactive-form, #ECF1F7);
-
+  gap: 1rem;
 }
-
-
 
 /*плавающая форма*/
 
@@ -142,11 +109,11 @@ body {
 }
 
 .did-floating-label {
-  color: var(--active-text, #100F0F);
+  color: var(--un-active-text, rgba(90, 88, 88, 0.80));
   /*кастомное свойство. Второй аргумент - резервное значение*/
 
   /* заголовок в форме */
-  font-family: Roboto;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.875rem;;
   font-style: normal;
   font-weight: 400;
@@ -161,53 +128,73 @@ body {
   pointer-events: none;
   /*должно ли реагировать на события указателя
   при наведении чтобы курсор не менял своего состояния*/
-  left: 0.5rem;
+  left: 0.7rem;
   top: 0.7rem;
   padding: 0.25rem 0.25rem;
   /* По вертикали | По горизонтали */
   background: var(--form-bg-color, #ECF1F7);
   /*верхние 2 свойства нужны чтобы типо
    казалось что рамка прерывается*/
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
+   transition: 0.2s ease all;
+   -moz-transition: 0.2s ease all;
+   -webkit-transition: 0.2s ease all;
   /*просто свойства для совместимости браузеров*/
 }
 
 .did-floating-input {
 
-  display: block;
+  /*display: block;*/
   width: 36.0625rem;
   height: 2.875rem;
   padding: 0.5rem 0.75rem;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
+  /*фактор сжатия flex-элемента.*/
 
-  background: #fff;
-  color: #323840;
-  border: 1px solid #3D85D8;
-  border-radius: 4px;
+  background: var(--form-bg-color, #ECF1F7);
+  color: var(--active-text, #100F0F);
+  /*цвет текста*/
+  border:none;
+  border-radius: 0.5rem;
   box-sizing: border-box;
 }
 
+
+.did-floating-input:hover{
+  background: var(--form-bg-color-hover,#E4EBF3);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.did-floating-input:hover~.did-floating-label {
+  background: var(--form-bg-color-hover,#E4EBF3);
+}
+
+
 .did-floating-input:focus { 
   outline: none;
-  border: 1px solid #9D9D9D;
+  border: 1px solid var(--form-border-color, #9D9D9D);
+  background: var(--form-bg-color-active, #fff);
 }
 
 .did-floating-input:focus~.did-floating-label {
   /*когда нажал чтобы писать*/
   top: -0.7rem;
- /* font-size: 0.875rem;*/
+  font-size: 0.725rem;
+  color:var(--active-text, #100F0F);
+  background: var(--form-bg-color-active, #fff);
+}
+.did-floating-input:focus~.did-floating-input::placeholder{
+  color: rebeccapurple;
 }
 
 .did-floating-input:not(:placeholder-shown)~.did-floating-label {
   /*когда пишешь и в форме появляется текст*/
-  top: -1rem;
-/*  font-size: 0.875rem;*/
+  top: -0.7rem;
+  font-size: 0.725rem;
+  color:var(--active-text, #100F0F);
 }
-
 
 .did-floating-input::placeholder {
 color: transparent;
@@ -219,6 +206,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
+
 
 /*конец плавающая форма*/
 
