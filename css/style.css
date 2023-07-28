@@ -167,7 +167,7 @@ form {
   flex-shrink: 0;
   /*фактор сжатия flex-элемента.*/
 
-  background: var(--form-bg-colo1r, #1d65bd);
+  background: var(--form-bg-color, #1d65bd);
   color: var(--active-text, #100F0F);
   /*цвет текста*/
   border: none;
@@ -179,10 +179,8 @@ form {
   /*выделение текста*/
   background-color: var(--sekection, #FFF4BB);
 }
-
-.did-floating-iput:hover {
+.did-floating-input:hover {
   background: var(--form-bg-color-hover, #E4EBF3);
-  background-color: #100F0F;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
