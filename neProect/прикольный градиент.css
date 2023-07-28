@@ -1,0 +1,7 @@
+background: repeating-linear-gradient(
+    35deg,
+    hsl(0 100% 50%) 0px 2px,
+    hsl(50 100% 50%) 0px 4px
+  );
+  mix-blend-mode: multiply;
+  animation: none 40000ms infinite linear;

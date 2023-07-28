@@ -6,6 +6,7 @@
     --form-bg-color-active: #fff;
     --un-active-text: rgba(90, 88, 88, 0.80);
     --form-border-color: #9D9D9D;
+    --form-border-color-invalid: #FF0000;
     --group-form-bg-color: #F6F7F9;
-
+    --sekection: #FFF4BB;
   }
