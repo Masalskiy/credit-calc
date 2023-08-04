@@ -241,41 +241,45 @@ input[type=date]::-webkit-datetime-edit-fields-wrapper{
 }
 
 input[type=date]::-webkit-calendar-picker-indicator{
-  background-image: url('/icons/innn.svg');
+  background-image: url('/icons/date.svg');
 	background-position: right;
   background-repeat: no-repeat;
-  background-color: #FF0000;
-  height: 1rem;
+  /*background-color: #FF0000;*/
+  height: 1.2rem;
   width: 80%;
 }
 input[type=date]::-webkit-datetime-edit-text{
-  color: var(--un-active-text);
+  /*color: var(--un-active-text);*/
+  color: var(--active-text);
 }
 
 input[type=date]::-webkit-datetime-edit-year-field{
-  /*сюда шрифт и цвет шрифта*/
-  color: var(--un-active-text);
-
+  /*color: var(--un-active-text);*/
+  color: var(--active-text);
 }
 input[type=date]::-webkit-datetime-edit-year-field:focus{
-  background-color: transparent;
+  background-color: var(--sekection);
   color: var(--active-text);
 }
 input[type=date]::-webkit-datetime-edit-month-field{
-  color: var(--un-active-text);
+  /*color: var(--un-active-text);*/
+  color: var(--active-text);
 }
 input[type=date]::-webkit-datetime-edit-month-field:focus  { 
-  background-color: transparent;
+  background-color: var(--sekection);
   color: var(--active-text);
+}
+input[type=date]::-webkit-datetime-edit-month-field:focus input[type=date]::-webkit-datetime-edit-month-field{
+  color:red !important;
 }
 input[type=date]::-webkit-datetime-edit-day-field{
-  color: var(--un-active-text);
-}
-input[type=date]::-webkit-datetime-edit-day-field:focus{
-  background-color: transparent;
+  /*color: var(--un-active-text);*/
   color: var(--active-text);
 }
-input[type=date]::-webkit-datetime-edit-day-field:not(:empty){}
+input[type=date]::-webkit-datetime-edit-day-field:focus{
+  background-color: var(--sekection);
+  color: var(--active-text);
+}
 /*конец кастомизация плавающей формы для date*/
 
 
