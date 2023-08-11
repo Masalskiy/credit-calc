@@ -1,5 +1,17 @@
 @import url(color.css);
 
+* {
+  box-sizing: border-box;
+}
+
+
+section {
+  background-color: var(--group-form-bg-color, #F6F7F9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
 h1 {
   color: var(--active-text, #100F0F);
@@ -11,23 +23,64 @@ h1 {
   text-transform: uppercase;
 }
 
-section {
-  background-color: var(--group-form-bg-color, #F6F7F9);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-
-
+.h2-title {
+  color: var(--active-text, #100F0F);
+  font-family: Verdana, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  white-space: nowrap;
+  margin: 0px;
 }
 
-select {
-  display: flex;
+/*стилизация select*/
+.inline-select {
+  display: inline-block;
+  color: var(--active-text, #100F0F);
+  font-family: Verdana, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
   padding: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
+  width: 13.5rem;
+  box-sizing: border-box;
+  margin: 0;
+
+  outline: 1px solid var(--un-active-text, #100F0F);
+  border: none;
+  border-radius: 0.5rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;/*отключить базовую стрелочку*/
+
+  background-size: 0.85em auto;
+  background-color: var(--form-bg-color);
+  background-image: url('/icons/arrow.svg');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.5rem) 0.4rem, 0 0;
+  background-size: 1.5rem, auto;
+  /*transition: background-image 1s ease;*/
 }
+.inline-select:focus {
+  outline: 1px solid var(--active-text);
+  background-color: var(--form-bg-color-active);
+  background-image: url('/icons/arrow-up.svg');
+}
+
+.inline-select::-ms-expand {
+  display: none;
+}
+.inline-select>option{
+  background-color:var(--form-bg-color-active);
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/*конец стилизации select*/
+
 
 /*определение стиля таблицы*/
 table {
@@ -67,23 +120,16 @@ caption {
 /*конец определения стиля таблицы*/
 
 
-.h2-title {
-  color: var(--active-text, #100F0F);
-  /* h2 */
-  font-family: Georgia, serif;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+
 
 .block-form {
   display: flex;
   padding: 1rem;
+  padding-top: 1.5rem;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  width: 614px;
+ /* width: 614px;*/
   border-radius: 1rem;
   background: #FFF;
 
@@ -93,11 +139,11 @@ caption {
 
 .wrap-h2-title {
   display: flex;
-  padding: 0.5rem 0rem;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   align-self: stretch;
+  
 }
 
 form {
@@ -179,6 +225,7 @@ form {
   /*выделение текста*/
   background-color: var(--sekection, #FFF4BB);
 }
+
 .did-floating-input:hover {
   background: var(--form-bg-color-hover, #E4EBF3);
   transition: 0.2s ease all;
@@ -210,7 +257,7 @@ form {
 
 
 .did-floating-input:not(:placeholder-shown)~.did-floating-label {
-/*если плэйсхолдер не показан, то поднать label*/
+  /*если плэйсхолдер не показан, то поднать label*/
   top: -0.7rem;
   font-size: 0.725rem;
   color: var(--active-text, #100F0F);
@@ -221,9 +268,10 @@ form {
   /*потом нужно чтобы плейсхолдер появился*/
   /* unAktiveText */
 }
-.did-floating-input:active~.did-floating-input::placeholder{
+
+.did-floating-input:active~.did-floating-input::placeholder {
   color: #ff00ea;
-} 
+}
 
 .did-floating-input:user-invalid {
   outline-color: var(--form-border-color-invalid, #FF0000);
@@ -232,7 +280,7 @@ form {
 /*конец плавающая форма*/
 
 /*кастомизация плавающей формы для date*/
-input[type=date]::-webkit-datetime-edit-fields-wrapper{
+input[type=date]::-webkit-datetime-edit-fields-wrapper {
   font-family: Verdana, sans-serif;
   font-size: 1rem;
   font-style: normal;
@@ -240,46 +288,54 @@ input[type=date]::-webkit-datetime-edit-fields-wrapper{
   line-height: 0.875rem;
 }
 
-input[type=date]::-webkit-calendar-picker-indicator{
+input[type=date]::-webkit-calendar-picker-indicator {
   background-image: url('/icons/date.svg');
-	background-position: right;
+  background-position: right;
   background-repeat: no-repeat;
   /*background-color: #FF0000;*/
   height: 1.2rem;
   width: 80%;
 }
-input[type=date]::-webkit-datetime-edit-text{
+
+input[type=date]::-webkit-datetime-edit-text {
   /*color: var(--un-active-text);*/
   color: var(--active-text);
 }
 
-input[type=date]::-webkit-datetime-edit-year-field{
+input[type=date]::-webkit-datetime-edit-year-field {
   /*color: var(--un-active-text);*/
   color: var(--active-text);
 }
-input[type=date]::-webkit-datetime-edit-year-field:focus{
+
+input[type=date]::-webkit-datetime-edit-year-field:focus {
   background-color: var(--sekection);
   color: var(--active-text);
 }
-input[type=date]::-webkit-datetime-edit-month-field{
+
+input[type=date]::-webkit-datetime-edit-month-field {
   /*color: var(--un-active-text);*/
   color: var(--active-text);
 }
-input[type=date]::-webkit-datetime-edit-month-field:focus  { 
+
+input[type=date]::-webkit-datetime-edit-month-field:focus {
   background-color: var(--sekection);
   color: var(--active-text);
 }
-input[type=date]::-webkit-datetime-edit-month-field:focus input[type=date]::-webkit-datetime-edit-month-field{
-  color:red !important;
+
+input[type=date]::-webkit-datetime-edit-month-field:focus input[type=date]::-webkit-datetime-edit-month-field {
+  color: red !important;
 }
-input[type=date]::-webkit-datetime-edit-day-field{
+
+input[type=date]::-webkit-datetime-edit-day-field {
   /*color: var(--un-active-text);*/
   color: var(--active-text);
 }
-input[type=date]::-webkit-datetime-edit-day-field:focus{
+
+input[type=date]::-webkit-datetime-edit-day-field:focus {
   background-color: var(--sekection);
   color: var(--active-text);
 }
+
 /*конец кастомизация плавающей формы для date*/
 
 
