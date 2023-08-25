@@ -23,146 +23,281 @@
             <div class="block-form">
                 <div class="wrap-h2-title">
                     <h2 class="h2-title">Параметры кредита,</h2>
-                    <select class="inline-select" id="var_credit" name="var_credit" >
-                        <option value="requested" selected>запрашиваемого</option>
-                        <option value="restructured">реструктурируемого</option>
+                    <select class="inline-select" id="var_credit" name="var_credit">
+                        <option value="requested" label="запрашиваемого" selected></option>
+                        <option value="restructured" label="реструктурируемого"></option>
                     </select>
                     <h2 class="h2-title">в АО Банк ТКПБ</h2>
                 </div>
 
                 <div class="did-floating-label-content">
-                    <input class="did-floating-input" type="text" placeholder="Иванов Иван Иванович" pattern="" autocomplete="off" required>
-                    <label class="did-floating-label">ФИО заемщика</label>
+                    <input class="did-floating-input" type="text" placeholder=" " autocomplete="off" id="fio" name="fio"
+                        required>
+                    <label class="did-floating-label" for="fio">ФИО заемщика</label>
                 </div>
+
                 <div class="did-floating-label-content">
-                    <input class="did-floating-input" type="date" name="date-calculation" id="date-calculation" placeholder="Дата расчёта" min="2020-01-01" max="2040-01-01"  required>
+                    <input class="did-floating-input" type="date" name="date-calculation" id="date-calculation"
+                        placeholder="Дата расчёта" min="2020-01-01" max="2040-01-01" required>
                     <label class="did-floating-label" for="date-calculation">Дата расчёта</label>
                 </div>
                 <div class="did-floating-label-content">
-                    <input class="did-floating-input" type="text" name="sum-credit" placeholder="Сумма кредита, руб" autocomplete="off" required>
-                    <label class="did-floating-label">Сумма кредита, руб</label>
+                    <input class="did-floating-input" type="text" id="sum-credit" name="sum-credit"
+                        placeholder="Сумма кредита, руб" autocomplete="off" required>
+                    <label class="did-floating-label" for="sum-credit">Сумма кредита, руб</label>
                 </div>
                 <div class="did-floating-label-content">
-                    <input class="did-floating-input" type="text" name="credit-term" placeholder="Срок кредита, мес" autocomplete="off" required>
-                    <label class="did-floating-label">Срок кредита, мес</label>
+                    <input class="did-floating-input" type="text" id="credit-term" name="credit-term"
+                        placeholder="Срок кредита, мес" autocomplete="off" required>
+                    <label class="did-floating-label" for="credit-term">Срок кредита, мес</label>
                 </div>
                 <div class="did-floating-label-content">
-                    <input class="did-floating-input" type="text" name="interest-rate" placeholder="Процентная ставка, % в год" autocomplete="off" required>
-                    <label class="did-floating-label">Процентная ставка, % в год</label>
-                </div>   
-                <select class="did-floating-input" id="" name="" placeholder="Вид платежа">
+                    <input class="did-floating-input" type="text" id="interest-rate" name="interest-rate"
+                        placeholder="Процентная ставка, % в год" autocomplete="off" required>
+                    <label class="did-floating-label" for="interest-rate">Процентная ставка, % в год</label>
+                </div>
+                <select class="big-select" id="payment-type" name="payment-type" placeholder="Вид платежа">
                     <option value="annuity" selected>Аннуитентный</option>
                     <option value="other">Иной</option>
                     <option value="fluent">Свободно диф.</option>
                 </select>
-
                 <div class="did-floating-label-content">
-                    <input class="did-floating-input" type="date" name="loan-term" placeholder="Начало выплат" required>
-                    <label class="did-floating-label">Начало выплат</label>
-                </div> 
-            </div>
-            <div class="block-form">
-                <h2 class="h2-title">Кредиты по данным отчета БКИ<br/>(кроме предоставленных АО Банк "ТКПБ"</h2>
-                <div>
-                    <div>
-                        <p>Кредит 1</p>
-                        <button onclick="удалить"><img src="icons/cross.svg"></button>
-                    </div>
-                    <!--Добавить сюда формочки-->
+                    <input class="did-floating-input" type="date" id="loan-term" name="loan-term"
+                        placeholder="Начало выплат" required>
+                    <label class="did-floating-label" for="loan-term">Начало выплат</label>
                 </div>
-                <button onclick="todo">Добавить кредит</button>
+
             </div>
+
             <div class="block-form">
-                <h2 class="h2-title">Кредиты и займы по договорам с другими кредиторами<br/>
-                    (кроме отчета БКИ, кроме предоставленных АО Банк "ТКПБ") </h2>
-                <div>
-                    <div>
-                        <p>Кредит 1</p>
-                        <button onclick="удалить"></button>
+                <h2 class="h2-title">Кредиты по данным отчета БКИ<br />(кроме предоставленных АО Банк "ТКПБ"
+                </h2>
+                <div class="credit-bki">
+                    <div class="credit-bki-title">
+                        <p class="title-subform">Кредит 1</p>
+                        <button class="arrow-btn" onclick="удалить" name="del-credit-bki" type="button">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.75806 17.2431L12.0011 12.0001L17.2441 17.2431M17.2441 6.75708L12.0001 12.0001L6.75806 6.75708"
+                                    stroke="current" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></button>
                     </div>
-                    <!--Добавить сюда формочки-->
+                    <div class="wrap-form">
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="psk-bki" name="psk-bki" placeholder=" "
+                                autocomplete="off" required>
+                            <label class="did-floating-label" for="psk-bki">ПСК</label>
+                        </div>
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="urgent-debt-bki" name="urgent-debt-bki"
+                                placeholder=" " autocomplete="off" required>
+                            <label class="did-floating-label" for="urgent-debt-bki">Срочная задолженность БКИ</label>
+                        </div>
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="date" id="start-pay-bki" name="start-pay-bki"
+                                placeholder="Начало выплат" required>
+                            <label class="did-floating-label" for="start-pay-bki">Начало выплат</label>
+                        </div>
+                    </div>
                 </div>
+
+                <button class="btn_add"onclick="todo"> 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 12.998H13V17.998C13 18.2633 12.8946 18.5176 12.7071 18.7052C12.5196 18.8927 12.2652 18.998 12 18.998C11.7348 18.998 11.4804 18.8927 11.2929 18.7052C11.1054 18.5176 11 18.2633 11 17.998V12.998H6C5.73478 12.998 5.48043 12.8927 5.29289 12.7052C5.10536 12.5176 5 12.2633 5 11.998C5 11.7328 5.10536 11.4785 5.29289 11.2909C5.48043 11.1034 5.73478 10.998 6 10.998H11V5.99805C11 5.73283 11.1054 5.47848 11.2929 5.29094C11.4804 5.1034 11.7348 4.99805 12 4.99805C12.2652 4.99805 12.5196 5.1034 12.7071 5.29094C12.8946 5.47848 13 5.73283 13 5.99805V10.998H18C18.2652 10.998 18.5196 11.1034 18.7071 11.2909C18.8946 11.4785 19 11.7328 19 11.998C19 12.2633 18.8946 12.5176 18.7071 12.7052C18.5196 12.8927 18.2652 12.998 18 12.998Z" fill="#100F0F"/>
+                    </svg>
+                    Добавить кредит</button>
+            </div>
+
+            <div class="block-form">
+                <h2 class="h2-title">Кредиты и займы по договорам с другими кредиторами<br />
+                    (кроме отчета БКИ, кроме предоставленных АО Банк "ТКПБ")
+                </h2>
+                <div class="credit-bki">
+                    <div class="credit-bki-title">
+                        <p class="title-subform">Кредит 1</p>
+                        <button class="arrow-btn" onclick="удалить" name="del-credit-bki" type="button">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.75806 17.2431L12.0011 12.0001L17.2441 17.2431M17.2441 6.75708L12.0001 12.0001L6.75806 6.75708"
+                                    stroke="current" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></button>
+                    </div>
+                    <div class="wrap-form">
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="psk-tkpb" name="psk-tkpb" placeholder=" "
+                                autocomplete="off" required>
+                            <label class="did-floating-label" for="psk-tkpb">ПСК</label>
+                        </div>
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="urgent-debt-tkpb" name="urgent-debt-tkpb"
+                                placeholder=" " autocomplete="off" required>
+                            <label class="did-floating-label" for="urgent-debt-tkpb">Срочная задолженность БКИ</label>
+                        </div>
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="date" id="start-pay-tkpb" name="start-pay-tkpb"
+                                placeholder=" " required>
+                            <label class="did-floating-label" for="start-pay-tkpb">Начало выплат</label>
+                        </div>
+                    </div>
+                </div>
+
                 <button onclick="todo">Добавить кредит</button>
+
             </div>
             <div class="block-form">
                 <h2 class="h2-title">Кредиты и займы, предоставленные АО Банк "ТКПБ"</h2>
-                <div>
-                    <div>
-                        <p>Кредит 1</p>
-                        <button onclick="удалить"></button>
+                <div class="credit-bki">
+                    <div class="credit-bki-title">
+                        <p class="title-subform">Кредит 1</p>
+                        <button class="arrow-btn" onclick="удалить" name="del-credit-bki" type="button">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.75806 17.2431L12.0011 12.0001L17.2441 17.2431M17.2441 6.75708L12.0001 12.0001L6.75806 6.75708"
+                                    stroke="current" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></button>
                     </div>
-                    <!--Добавить сюда формочки-->
+                    <div class="wrap-form">
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="psk-all" name="psk-all" placeholder=" "
+                                autocomplete="off" required>
+                            <label class="did-floating-label" for="psk-all">ПСК</label>
+                        </div>
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="urgent-debt-all" name="urgent-debt-all"
+                                placeholder=" " autocomplete="off" required>
+                            <label class="did-floating-label" for="urgent-debt-all">Срочная задолженность БКИ</label>
+                        </div>
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="date" id="start-pay-all" name="start-pay-all"
+                                placeholder=" " required>
+                            <label class="did-floating-label" for="start-pay-all">Начало выплат</label>
+                        </div>
+                    </div>
                 </div>
                 <button onclick="todo">Добавить кредит</button>
             </div>
+
             <div class="block-form">
                 <h2 class="h2-title">Просроченные задолженности по кредитам</h2>
-                <div>
-                    <div>
-                        <p>Задолженность 1</p>
-                        <button onclick="удалить"></button>
+                <div class="credit-bki">
+                    <div class="credit-bki-title">
+                        <p class="title-subform">Задолженность 1</p>
+                        <button class="arrow-btn" onclick="удалить" name="del-arreas" type="button">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.75806 17.2431L12.0011 12.0001L17.2441 17.2431M17.2441 6.75708L12.0001 12.0001L6.75806 6.75708"
+                                    stroke="current" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></button>
                     </div>
-                    <!--Добавить сюда формочки-->
+                    <div class="wrap-form">
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="arreas" name="arreas" placeholder=" "
+                                autocomplete="off" required>
+                            <label class="did-floating-label" for="arreas">Сумма просроченной задолженности</label>
+                        </div>
+                    </div>
                 </div>
                 <button onclick="todo">Добавить задолженность</button>
             </div>
+
+
+
             <div class="block-form">
                 <h2 class="h2-title">Информация по кредитным картам</h2>
-                <div>
-                    <div>
-                        <p>Кредитная карта 1</p>
-                        <button onclick="удалить"></button>
+                <div class="credit-bki">
+                    <div class="credit-bki-title">
+                        <p class="title-subform">Кредитная карта 1</p>
+                        <button class="arrow-btn" onclick="удалить" name="del-arreas" type="button">
+                            <svg width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.75806 17.2431L12.0011 12.0001L17.2441 17.2431M17.2441 6.75708L12.0001 12.0001L6.75806 6.75708"
+                                    stroke="current" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></button>
                     </div>
-                    <!--Добавить сюда формочки-->
+                    <div class="wrap-form">
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="debt-credit-cards"
+                                name="debt-credit-cards" placeholder=" " autocomplete="off" required>
+                            <label class="did-floating-label" for="debt-credit-cards">Задолженность</label>
+                        </div>
+                        <div class="did-floating-label-content">
+                            <input class="did-floating-input" type="text" id="sum-debt-credit-cards"
+                                name="sum-debt-credit-cards" placeholder=" " autocomplete="off" required>
+                            <label class="did-floating-label" for="sum-debt-credit-cards">Сумма просроченной
+                                задолженности</label>
+                        </div>
+                    </div>
                 </div>
                 <button onclick="todo">Добавить карту</button>
             </div>
             <div class="block-form">
-                <h2 class="h2-title">Чистый ежемесячный доход</h2>
-                <!--Добавить сюда форму-->
+                <div class="wrap-h2-title">
+                    <h2 class="h2-title">Чистый ежемесячный доход</h2>
+                </div>
+                <div class="wrap-form">
+                    <div class="did-floating-label-content">
+                        <input class="did-floating-input" type="text" id="amount-income" name="amount-income"
+                            placeholder=" " autocomplete="off" required>
+                        <label class="did-floating-label" for="amount-income">Сумма дохода</label>
+                    </div>
+
+                </div>
             </div>
             <button onclick="рассчитать">рассчитать</button>
         </form>
-        <div class="block-form">
-            <table class="table-class">
-                <caption class="h2-title">ГРАФИК ПЛАТЕЖЕЙ</caption>
-                <thead>
-                    <tr>
-                        <th>№</th>
-                        <th>Общая сумма платежа</th>
-                        <th>платеж по погашению основного долга</th>
-                        <th>платеж по погашению процентов</th>
-                        <th>Остаток задолженности после платежа</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>123</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>итог</td>
-                    </tr>
-                </tfoot>
-            </table>
-            <div>
-                <p>Среднемесячный платеж по запрашиваемому кредиту = </p>
-                <!--Добавить сюда форму-->
-            </div>
-            <div>
-                <p>Среднемесячный платеж по данным отчета
-                    БКИ и иным заёмным средствам =</p>
-                <!--Добавить сюда форму-->
-            </div>
-            <div>
-                <p>ПДН</p>
-                <!--Добавить сюда форму-->
+
+        <div class="wrap-table">
+            <div class="block-table">
+                <table class="table-class">
+                    <caption class="h2-title">ГРАФИК ПЛАТЕЖЕЙ</caption>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Общая сумма платежа</th>
+                            <th>платеж по погашению основного долга</th>
+                            <th>платеж по погашению процентов</th>
+                            <th>Остаток задолженности после платежа</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>123</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>итог</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div>
+                    <p>Среднемесячный платеж по запрашиваемому кредиту = </p>
+                    <!--Добавить сюда форму-->
+                </div>
+                <div>
+                    <p>Среднемесячный платеж по данным отчета
+                        БКИ и иным заёмным средствам =</p>
+                    <!--Добавить сюда форму-->
+                </div>
+                <div>
+                    <p>ПДН</p>
+                    <!--Добавить сюда форму-->
+                </div>
             </div>
         </div>
         <button onclick="todo">Сохранить в PDF</button>
     </section>
-     <script language="JavaScript" src="js/current-date.js"></script>
+    <script language="JavaScript" src="js/current-date.js"></script>
 </body>
 
 </html>
